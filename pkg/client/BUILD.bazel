@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["config.go"],
+    importpath = "github.com/nilebox/kube-catalog/pkg/client",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//vendor/github.com/pkg/errors:go_default_library",
+        "//vendor/k8s.io/client-go/rest:go_default_library",
+        "//vendor/k8s.io/client-go/tools/clientcmd:go_default_library",
+        "//vendor/k8s.io/client-go/tools/clientcmd/api:go_default_library",
+    ],
+)

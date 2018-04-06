@@ -1,0 +1,30 @@
+required = [
+    "github.com/bazelbuild/buildtools/buildozer",
+    "github.com/bazelbuild/buildtools/buildifier",
+    "k8s.io/code-generator/cmd/client-gen",
+    "k8s.io/code-generator/cmd/deepcopy-gen",
+]
+
+[prune]
+  non-go = true
+  go-tests = true
+
+[[override]]
+  branch = "release-1.10"
+  name = "k8s.io/code-generator"
+
+[[constraint]]
+  branch = "master" # latest
+  name = "github.com/bazelbuild/buildtools"
+
+[[constraint]]
+  name = "k8s.io/apimachinery"
+  branch = "release-1.10"
+
+[[constraint]]
+  name = "k8s.io/client-go"
+  branch = "release-7.0"
+
+[[constraint]]
+  name = "k8s.io/api"
+  branch = "release-1.10"
